@@ -39,6 +39,16 @@ exports.cssLoaders = function (options) {
     else {
       return loaders
     }
+
+    if (options.extract) {
+      return ExtractTextPlugin.extract({
+        use: loaders,
+        publicPath: '../../',         // 注意配置这一部分，根据目录结构自由调整
+        fallback: 'vue-style-loader'
+      })
+    } else {
+      return ['vue-style-loader'].concat(loaders)
+    }
   }
 
   // https://vue-loader.vuejs.org/en/configurations/extract-css.html

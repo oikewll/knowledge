@@ -113,7 +113,7 @@ const webConfig = {
    * See http://webpack.github.io/docs/configuration.html#resolve
    */
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.jpg', '.png', '.svg', '.js', '.vue', '.json'],
     alias: {
       '@': helper.resolve('src')
     }
@@ -126,6 +126,30 @@ const webConfig = {
   module: {
     // webpack 2.0 
     rules: useEslint.concat([
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: 'img/[name].[hash:7].[ext]',
+        }
+      },
+      {
+        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: 'img/[name].[hash:7].[ext]',
+        }
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: 'img/[name].[hash:7].[ext]',
+        }
+      },
       {
         test: /\.js$/,
         use: [{
@@ -190,7 +214,7 @@ const weexConfig = {
    * See http://webpack.github.io/docs/configuration.html#resolve
    */
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.jpg', '.png', '.svg', '.js', '.vue', '.json'],
     alias: {
       '@': helper.resolve('src')
     }
@@ -202,6 +226,30 @@ const weexConfig = {
    */
   module: {
     rules: [
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: 'img/[name].[hash:7].[ext]',
+        }
+      },
+      {
+        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: 'img/[name].[hash:7].[ext]',
+        }
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: 'img/[name].[hash:7].[ext]',
+        }
+      },
       {
         test: /\.js$/,
         use: [{

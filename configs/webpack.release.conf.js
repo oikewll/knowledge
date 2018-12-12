@@ -32,6 +32,13 @@ const generateMultipleEntrys = (entry) => {
       isDevServer: true,
       chunksSortMode: 'dependency',
       inject: true,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true
+        // more options:
+        // https://github.com/kangax/html-minifier#options-quick-reference
+      },
       chunks: [name],
       // production
       minimize: true
@@ -121,7 +128,14 @@ const productionConfig = webpackMerge(commonConfig[0], {
     new HtmlWebpackPlugin({
       template: 'web/index.html',
       chunksSortMode: 'dependency',
-      inject: 'head'
+      inject: 'head',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true
+        // more options:
+        // https://github.com/kangax/html-minifier#options-quick-reference
+      }
     }),
     /*
      * Plugin: ScriptExtHtmlWebpackPlugin
