@@ -1,6 +1,5 @@
 /* global Vue */
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 
 Vue.use(Router)
 
@@ -10,10 +9,23 @@ Vue.prototype.config = {
 
 module.exports = new Router({
   routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
-  ]
+	{
+		path: '/',
+		name: 'index',
+		component: () => import('@/views/home')
+	},
+	{
+		path: '/web',
+		name: 'webview',
+		component: () => import('@/views/webview')
+	},
+	{
+		name: 'error',
+		path: '/error',
+		component: () => import('@/views/error')
+	},
+	{
+		path: '*',
+		redirect: '/error'
+	}]
 })
