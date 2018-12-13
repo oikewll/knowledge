@@ -3,9 +3,11 @@
 		loadmoreoffset='40'
 		@loadmore="loadmore"
 	>
-		<cell class="title">你知道吗？</cell>
+		<cell>
+			<text class="title">你知道吗？</text>
+		</cell>
 
-		<cell class="mod-loading" v-if="pageload">
+		<cell class="mod-loading pageload" v-if="pageload">
 			<image class="loadimg" src="https://static.xiaoxiaoge.com/icon/ellipsis.svg"></image>
 		</cell>
 		<cell class="items" v-for="(item, index) in list" :key="item.itemId" @click="showItem(item.wapLink, item)" :data-id="item.itemId" v-else>
@@ -33,7 +35,7 @@ export default {
 	data () {
 		return {
 			pageload: true,
-			cout: 15,
+			cout: 10,
 			page: 1,
 			keyWord: '',
 			list: [],
@@ -45,18 +47,49 @@ export default {
 		this.getList();
 	},
 	methods: {
+		transform(obj) {
+			let ret = "";
+			for (let key in obj) {
+				ret +=
+				encodeURIComponent(key) +
+				"=" +
+				encodeURIComponent((typeof(obj[key]) === 'object') ? JSON.stringify(obj[key]) : (typeof(obj[key]) === 'number') ? Number(obj[key]) : obj[key] ) +
+				"&";
+			}
+			return ret;
+		},
+		setItem(obj){
+			stream.fetch({
+		        method: 'POST',
+				url: this.config.baseurl + '/set',
+				type:'json',
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded'
+				},
+				body: this.transform(obj),
+			}, ret => {
+				if (!ret.ok) {
+					console.error(ret);
+					return;
+				}
+
+			}, info => {
+				console.log(info);
+			});
+		},
 		showItem(link, obj){
 			console.log(link, obj);
 			/**
 			 * 这里点击后用av的查询id，
 			 * 如果没有的就存储一份到数据库
 			 */
+			this.setItem(obj);
 			this.$router.push({
 				path: '/web',
 				query: {
 					url: link
 				}
-			})
+			});
 		},
 		getList(){
 			let that = this;
@@ -81,11 +114,20 @@ export default {
 					that.pageload = false;
 				}
 
+				/**
+				 * 后端转发百度api的related相关条目是数组object，
+				 * 但有可能会请求超时或者被封api，
+				 * 调用av云存储的时候以string写入，所以这里要做个判断，
+				 */
+				for (let i = 0; i < that.list.length; i++) {
+					if (typeof(that.list[i].related) === 'string') {
+						that.list[i].related = JSON.parse(that.list[i].related);
+					}
+				}
+
 				that.endload = false;
-
-
-			}, err => {
-				console.error(err);
+			}, info => {
+				console.log(info);
 			});
 		},
 		loadmore(){
@@ -109,6 +151,12 @@ export default {
 }
 .loadimg{
 	height: 70px;
+	position: relative;
+	top: 50%;
+}
+.pageload{
+	height: 500px;
+	line-height: 500px;
 }
 .item-list{
 	background: #f4f4f4;
