@@ -4,7 +4,8 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 Vue.prototype.config = {
-	baseurl: (process.env.NODE_ENV === 'development') ? '//127.0.0.1:3000' : '//douknow.leanapp.cn',
+	// baseurl: (process.env.NODE_ENV === 'development') ? '//127.0.0.1:3000' : '//douknow.leanapp.cn',
+	baseurl: '//douknow.leanapp.cn'
 }
 
 module.exports = new Router({
