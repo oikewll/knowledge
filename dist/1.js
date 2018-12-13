@@ -77,15 +77,15 @@ module.exports = {
   "item-list": {
     "background": "#f4f4f4",
     "color": "#666666",
-    "paddingTop": "30",
-    "paddingRight": "30",
-    "paddingLeft": "30",
+    "paddingTop": "20",
+    "paddingRight": "20",
+    "paddingLeft": "20",
     "height": 100
   },
   "title": {
     "fontSize": "60",
     "color": "#666666",
-    "marginBottom": "30"
+    "marginBottom": "20"
   },
   "items": {
     "borderTop": "1px solid #e6e6e6",
@@ -98,8 +98,8 @@ module.exports = {
     "paddingLeft": "30",
     "paddingRight": "30",
     "paddingBottom": "40",
-    "marginBottom": "40",
-    "boxShadow": "0 0 20px rgba(0,0,0,.15)"
+    "marginBottom": "20",
+    "boxShadow": "0 0 15px rgba(0,0,0,.15)"
   },
   "item-tit": {
     "fontSize": "40",

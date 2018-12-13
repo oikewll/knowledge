@@ -161,15 +161,15 @@ export default {
 .item-list{
 	background: #f4f4f4;
 	color: #666;
-	padding-top: 30px;
-	padding-right: 30px;
-	padding-left: 30px;
+	padding-top: 20px;
+	padding-right: 20px;
+	padding-left: 20px;
 	height: 100%;
 }
 .title{
 	font-size: 60px;
 	color: #666;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 }
 .items{
 	border-top: 1px solid #e6e6e6;
@@ -182,8 +182,8 @@ export default {
 	padding-left: 30px;
 	padding-right: 30px;
 	padding-bottom: 40px;
-	margin-bottom: 40px;
-	box-shadow: 0 0 20px rgba(0,0,0,.15);
+	margin-bottom: 20px;
+	box-shadow: 0 0 15px rgba(0,0,0,.15);
 }
 .item-tit{
 	font-size: 40px;
