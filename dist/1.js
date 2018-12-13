@@ -92,14 +92,14 @@ module.exports = {
     "borderRight": "1px solid #e6e6e6",
     "borderBottom": "1px solid #e6e6e6",
     "borderLeft": "1px solid #e6e6e6",
-    "borderRadius": "8",
+    "borderRadius": "10",
     "background": "#fff",
     "paddingTop": "40",
     "paddingLeft": "30",
     "paddingRight": "30",
     "paddingBottom": "40",
-    "marginBottom": "20",
-    "boxShadow": "0 0 15px rgba(0,0,0,.15)"
+    "marginBottom": "30",
+    "boxShadow": "0 0 15px rgba(0,0,0,.1)"
   },
   "item-tit": {
     "fontSize": "40",

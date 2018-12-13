@@ -176,14 +176,14 @@ export default {
 	border-right: 1px solid #e6e6e6;
 	border-bottom: 1px solid #e6e6e6;
 	border-left: 1px solid #e6e6e6;
-	border-radius: 8px;
+	border-radius: 10px;
 	background: #fff;
 	padding-top: 40px;
 	padding-left: 30px;
 	padding-right: 30px;
 	padding-bottom: 40px;
-	margin-bottom: 20px;
-	box-shadow: 0 0 15px rgba(0,0,0,.15);
+	margin-bottom: 30px;
+	box-shadow: 0 0 15px rgba(0,0,0,.1);
 }
 .item-tit{
 	font-size: 40px;
