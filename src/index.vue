@@ -5,5 +5,8 @@
 <script>
 </script>
 
-<style scoped>
+<style>
+body,html,input,div,.weex-el{
+	font:12px/1.5 PingFangSC-Regular,Tahoma,'Microsoft Yahei',sans-serif;
+}
 </style>

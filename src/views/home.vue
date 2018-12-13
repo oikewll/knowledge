@@ -172,7 +172,10 @@ export default {
 	margin-bottom: 30px;
 }
 .items{
-	border: 1px solid #d8d8d8;
+	border-top: 1px solid #e6e6e6;
+	border-right: 1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;
+	border-left: 1px solid #e6e6e6;
 	border-radius: 8px;
 	background: #fff;
 	padding-top: 40px;
@@ -180,6 +183,7 @@ export default {
 	padding-right: 30px;
 	padding-bottom: 40px;
 	margin-bottom: 40px;
+	box-shadow: 0 0 20px rgba(0,0,0,.15);
 }
 .item-tit{
 	font-size: 40px;

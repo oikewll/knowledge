@@ -88,14 +88,18 @@ module.exports = {
     "marginBottom": "30"
   },
   "items": {
-    "border": "1px solid #d8d8d8",
+    "borderTop": "1px solid #e6e6e6",
+    "borderRight": "1px solid #e6e6e6",
+    "borderBottom": "1px solid #e6e6e6",
+    "borderLeft": "1px solid #e6e6e6",
     "borderRadius": "8",
     "background": "#fff",
     "paddingTop": "40",
     "paddingLeft": "30",
     "paddingRight": "30",
     "paddingBottom": "40",
-    "marginBottom": "40"
+    "marginBottom": "40",
+    "boxShadow": "0 0 20px rgba(0,0,0,.15)"
   },
   "item-tit": {
     "fontSize": "40",

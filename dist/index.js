@@ -2882,7 +2882,11 @@ module.exports = __vue_exports__
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = {}
+module.exports = {
+  "weex-el": {
+    "font": "12px/1.5 PingFangSC-Regular,Tahoma,'Microsoft Yahei',sans-serif"
+  }
+}
 
 /***/ }),
 /* 5 */
